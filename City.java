@@ -10,6 +10,7 @@ public class City extends Applet implements MouseListener {
       addMouseListener(this);
       strBuffer = new StringBuffer();
       addItem("initializing the apple ");
+      setSize(1360, 768);
    }
 
    public void start() {
