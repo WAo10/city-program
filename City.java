@@ -5,24 +5,25 @@ import java.awt.Graphics;
 
 public class City extends Applet implements MouseListener {
    StringBuffer strBuffer;
-
+   private Building build1, build2, build3, build4, build5;
    public void init() {
       addMouseListener(this);
       strBuffer = new StringBuffer();
-      addItem("initializing the apple ");
+      addItem("initializing the applet ");
+      Building build1 = new Building(250, 50, 50);
       setSize(1360, 768);
    }
 
    public void start() {
-      addItem("starting the applet ");
+      addItem("\nstarting the applet ");
    }
 
    public void stop() {
-      addItem("stopping the applet ");
+      addItem("\nstopping the applet ");
    }
 
    public void destroy() {
-      addItem("unloading the applet");
+      addItem("\nunloading the applet");
    }
 
    void addItem(String word) {
@@ -32,13 +33,7 @@ public class City extends Applet implements MouseListener {
    }
 
    public void paint(Graphics g) {
-      // Draw a Rectangle around the applet's display area.
-      g.drawRect(0, 0,
-      getWidth() - 1,
-      getHeight() - 1);
-
-      // display the string inside the rectangle.
-      g.drawString(strBuffer.toString(), 10, 20);
+      build1.draw(g);
    }
 
 
