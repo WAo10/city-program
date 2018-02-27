@@ -4,18 +4,17 @@ import java.applet.Applet;
 import java.awt.*;
  
 public class City extends Applet{ //implements MouseListener {
-   //StringBuffer strBuffer;
+   StringBuffer strBuffer;
    private Building build1, build2, build3, build4, build5;
-   private StickFigure figure;
    public void init() {
       //addMouseListener(this);
-      //strBuffer = new StringBuffer();
+      strBuffer = new StringBuffer();
       //addItem("initializing the applet ");
-      build1 = new Building(500, 100, 50);
-      build2 = new Building(500, 100, 250);
-      build3 = new Building(500, 100, 450);
-      build4 = new Building(500, 100, 650);
-      build5 = new Building(500, 100, 850);
+      build1 = new Building(400, 150, 50);
+      build2 = new Building(250, 125, 300);
+      build3 = new Building(500, 130, 600);
+      build4 = new Building(100, 160, 800);
+      build5 = new Building(300, 140, 1100);
       setSize(1360, 768);
    }
 
@@ -32,13 +31,14 @@ public class City extends Applet{ //implements MouseListener {
       addItem("\nunloading the applet");
    }
   
+   
    void addItem(String word) {
       System.out.println(word);
       strBuffer.append(word);
       repaint();
    }
-
-   */
+*/
+   
   
    public void paint(Graphics page) {
       start();
@@ -47,7 +47,6 @@ public class City extends Applet{ //implements MouseListener {
       build3.draw(page);
       build4.draw(page);
       build5.draw(page);
-      repaint();
    }
 
 
