@@ -5,7 +5,7 @@ public class Building //implements Runnable
 {
    private int height, width, x;
    private int base;
-   private int windowState[];
+   private Window windows[];
 
    private Random gen = new Random();
     public Building(int tall, int wide, int pos)
@@ -14,11 +14,13 @@ public class Building //implements Runnable
         width = wide;
         x = pos;
         base = 450+(150-height);
-        windowState = new int[((wide*pos)/10)];
+        windows = new Window[((wide*pos)/10)];
     }
      
     public void draw(Graphics page)
     {
+        int[] points = {10, 50, 90, 50, 10};
+        page.drawPolygon(points, points, 5);
         page.setColor(Color.black);
         page.drawRect(x, base, width, height);
         
@@ -48,25 +50,27 @@ public class Building //implements Runnable
         }
     }
     
-    public int getWindow()
+    public int getPos()
     {
-        return windowState.length; 
+        return 0;
     }
+    
+    /*
     public void run()
     {
         while(true)
-        for (int window: windowState)
+        for (Window window: windows)
         {
-            if ((gen.nextInt(1)==1) && (window==1))
+            if ((gen.nextInt(1)==1) && (window.getState()==1))
             {
-                window=0;
+                window.changeState();
             }
                 else if (gen.nextInt(1)==1)
             {
-                window=1;
+                window.changeState();
             }
         }
-    }
+    }*/
     
 }
 
