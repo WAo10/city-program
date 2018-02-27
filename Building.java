@@ -29,7 +29,7 @@ public class Building //implements Runnable
         page.drawLine(x+width+50, base-50, x+width+50, height+base-50);
         page.drawLine(x+50, base-50, x+width+50, base-50);
         
-        int horiz_space = 10;
+        int horiz_space = width%6;
         int vert_space = height%6;
         boolean check = true;
         while(check==true)
