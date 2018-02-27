@@ -1,6 +1,6 @@
 import java.awt.*;  
 import java.applet.*;  
-  
+   
   
 public class Background extends Applet {  
   

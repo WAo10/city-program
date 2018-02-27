@@ -1,0 +1,63 @@
+//********************************************************************
+//  StickFigure.java       Author: Lewis/Loftus/Cocking
+//
+//  Represents a graphical stick figure.
+//********************************************************************
+
+import java.awt.*;
+
+public class StickFigure
+{
+   private int baseX;     // center of figure
+   private int baseY;     // floor (bottom of feet)
+   private Color color;   // color of stick figure
+   private int height, mode;    // height of stick figure
+
+   //-----------------------------------------------------------------
+   //  Sets up the stick figure's primary attributes.
+   //-----------------------------------------------------------------
+   public StickFigure (int center, int bottom, Color shade, int size, int dabmode)
+   {
+      baseX = center;
+      baseY = bottom;
+      color = shade;
+      height = size;
+      mode = dabmode;
+   }
+
+   public void setHeight(int height)
+   {
+       this.height = height;
+    }
+   //-----------------------------------------------------------------
+   //  Draws this figure relative to baseX, baseY, and height.
+   //-----------------------------------------------------------------
+   public void draw (Graphics page)
+   {
+      int top = baseY - height;  // top of head
+
+      page.setColor (color);
+
+      // head
+      page.drawOval(baseX-10, top, 20, 20);
+
+      
+      // trunk
+      page.drawLine(baseX, top+20, baseX, baseY-30);
+
+      page.drawLine (baseX, baseY-30, baseX-15, baseY);  // legs
+      page.drawLine (baseX, baseY-30, baseX+15, baseY);
+
+      if (mode==0)
+      {
+      page.drawLine (baseX, baseY-80, baseX-25, baseY-70);  // arms
+      page.drawLine (baseX-25, baseY-70, baseX+20, baseY-100);
+      page.drawLine (baseX, baseY-70, baseX+50, baseY-85);
+    }
+    else
+    {
+        page.drawLine (baseX-25, baseY-70, baseX+20, baseY-100);
+      page.drawLine (baseX, baseY-80, baseX-25, baseY-70);
+    }
+   }
+}

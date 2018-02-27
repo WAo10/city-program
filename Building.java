@@ -1,6 +1,7 @@
-import java.awt.Graphics;
+import java.awt.*;
+import java.applet.Applet;
 import java.util.Random;
-public class Building implements Runnable
+public class Building //implements Runnable
 {
    private int height, width, x;
    private int windowState[];
@@ -12,11 +13,16 @@ public class Building implements Runnable
         x = pos;
         windowState = new int[((wide*pos)%10)];
     }
-    
+     
     public void draw(Graphics page)
     {
-        page.drawRect(x, 1000, width, height);
-        
+        page.setColor(Color.black);
+        page.drawRect(x, 100, width, height);
+        page.drawLine(x, 100, x+50, 100-50);
+        page.drawLine(x+width, 100, x+width+50, 100-50);
+        page.drawLine(x+width, height+100, x+width+50, height+50);
+        page.drawLine(x+width+50, 100-50, x+width+50, height+100-50);
+        page.drawLine(x+50, 100-50, x+width+50, 100-50);
     }
 
     public void run()
@@ -34,5 +40,6 @@ public class Building implements Runnable
             }
         }
     }
+    
 }
 
