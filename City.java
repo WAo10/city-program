@@ -17,6 +17,23 @@ public class City extends Applet{ //implements MouseListener {
       build3 = new Building(500, 175, 500);
       build4 = new Building(100, 200, 750);
       build5 = new Building(300, 150, 1050);
+      /*
+      Thread t1 = new Thread(build1);
+      t1.start();
+      
+      Thread t2 = new Thread(build2);
+      t1.start();
+      
+      Thread t3 = new Thread(build3);
+      t1.start();
+      
+      Thread t4 = new Thread(build4);
+      t1.start();
+      
+      Thread t5 = new Thread(build5);
+      t1.start();
+      */
+     
       setSize(1360, 768);
       offscreen = createImage(1360, 768);
       bufferGraphics = offscreen.getGraphics();

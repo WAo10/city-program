@@ -2,14 +2,12 @@
 /**
  * William Ao
  */
-import java.util.Random;
 import java.awt.*;
-
+import java.util.Random;
 public class Window
 {
-    private int[] state;
     private int wide, tall, pos, base;
-    private Window windows[];
+    private Random gen = new Random();
     /**
      * Constructor for objects of class Window
      */
@@ -26,14 +24,27 @@ public class Window
     {
         int hSpace = 5;
         int vSpace = 5;
-        int count = 0;
         boolean check = true;
         while (check)
         {
-            page.drawRect(pos+hSpace, base+vSpace, 15, 15);
+                page.fillRect(pos+hSpace, base+vSpace, 15, 15);
+                if (gen.nextInt(3)==2)
+                {
+                    page.setColor(Color.yellow);
+                    page.fillRect(pos+hSpace, base+vSpace, 15, 15);
+                    page.setColor(Color.black);
+                    try
+                    {
+                         Thread.sleep(17);
+                    } catch(InterruptedException e){}
+                
+                }
+                else if (gen.nextInt(10) == 1)
+                {
+                    page.setColor(Color.black);
+                    page.fillRect(pos+hSpace, base+vSpace, 15, 15);
+                }
                 hSpace+=25;
-                count+=1;
-
                 if (hSpace+15>=wide)
                 {
                     hSpace = 5;
@@ -44,8 +55,7 @@ public class Window
                     check=false;
                 }
         }
-        state = new int[count];
     }
    
-    
+
 }

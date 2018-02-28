@@ -42,18 +42,21 @@ public class Building //implements Runnable
     public void run()
     {
         while(true)
-        for (Window window: windows)
         {
-            if ((gen.nextInt(1)==1) && (window.getState()==1))
+            for (Window window: windows)
             {
-                window.changeState();
-            }
-                else if (gen.nextInt(1)==1)
-            {
-                window.changeState();
+                if ((gen.nextInt(1)==1) && (window.getState()==1))
+                {
+                    window.changeState();
+                }
+                    else if (gen.nextInt(1)==1)
+                {
+                    window.changeState();
+                }
             }
         }
-    }*/
+    }
+    */
     
 }
 
