@@ -14,9 +14,9 @@ public class City extends Applet{ //implements MouseListener {
       //addItem("initializing the applet ");
       build1 = new Building(400, 150, 50);
       build2 = new Building(250, 125, 300);
-      build3 = new Building(500, 130, 600);
-      build4 = new Building(100, 160, 800);
-      build5 = new Building(300, 140, 1100);
+      build3 = new Building(500, 175, 500);
+      build4 = new Building(100, 200, 750);
+      build5 = new Building(300, 150, 1050);
       setSize(1360, 768);
       offscreen = createImage(1360, 768);
       bufferGraphics = offscreen.getGraphics();
