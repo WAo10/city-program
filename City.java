@@ -8,6 +8,8 @@ public class City extends Applet{ //implements MouseListener {
    Image offscreen;
    StringBuffer strBuffer;
    private Building build1, build2, build3, build4, build5;
+   private Background back;
+   
    public void init() {
       //addMouseListener(this);
       strBuffer = new StringBuffer();
@@ -17,6 +19,7 @@ public class City extends Applet{ //implements MouseListener {
       build3 = new Building(500, 175, 500);
       build4 = new Building(100, 200, 750);
       build5 = new Building(300, 150, 1050);
+      back = new Background();
       /*
       Thread t1 = new Thread(build1);
       t1.start();
@@ -34,8 +37,8 @@ public class City extends Applet{ //implements MouseListener {
       t1.start();
       */
      
-      setSize(1360, 768);
-      offscreen = createImage(1360, 768);
+      setSize(1340, 650);
+      offscreen = createImage(1350, 730);
       bufferGraphics = offscreen.getGraphics();
    }
 
@@ -68,6 +71,7 @@ public class City extends Applet{ //implements MouseListener {
       build3.draw(bufferGraphics);
       build4.draw(bufferGraphics);
       build5.draw(bufferGraphics);
+      back.draw(bufferGraphics);
       page.drawImage(offscreen, 0, 0, this);
       repaint();
    }

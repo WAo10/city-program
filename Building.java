@@ -6,6 +6,7 @@ public class Building //implements Runnable
    private int height, width, x;
    private int base;
    private Window windows;
+   private Background back;
 
    private Random gen = new Random();
     public Building(int tall, int wide, int pos)
