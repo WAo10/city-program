@@ -4,7 +4,7 @@ import java.applet.Applet;
 import java.awt.*;
  
 public class City extends Applet{ //implements MouseListener {
-   Graphics bufferGraphics;
+   Graphics bufferGraphics, bufferGraphics2;
    Image offscreen;
    StringBuffer strBuffer;
    private Building build1, build2, build3, build4, build5;
@@ -40,6 +40,7 @@ public class City extends Applet{ //implements MouseListener {
       setSize(1340, 650);
       offscreen = createImage(1350, 730);
       bufferGraphics = offscreen.getGraphics();
+      bufferGraphics2 = offscreen.getGraphics();
    }
 
    
@@ -66,13 +67,17 @@ public class City extends Applet{ //implements MouseListener {
   
    public void paint(Graphics page) {
       start();
+      
+      back.draw(bufferGraphics2);
+      
       build1.draw(bufferGraphics);
       build2.draw(bufferGraphics);
       build3.draw(bufferGraphics);
       build4.draw(bufferGraphics);
       build5.draw(bufferGraphics);
-      back.draw(bufferGraphics);
+      
       page.drawImage(offscreen, 0, 0, this);
+      
       repaint();
    }
 
