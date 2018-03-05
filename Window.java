@@ -4,9 +4,9 @@
  */
 import java.awt.*;
 import java.util.Random;
-public class Window
+public class Window implements Runnable
 {
-    private int wide, tall, pos, base;
+    private int wide, tall, pos, base, check;
     private Random gen = new Random();
     /**
      * Constructor for objects of class Window
@@ -26,18 +26,19 @@ public class Window
         int vSpace = 5;
         boolean check = true;
         
-
         while (check)
         {
                 page.fillRect(pos+hSpace, base+vSpace, 15, 15);
-                if (gen.nextInt(3)==2)
+                
+                
+                if (gen.nextInt(5)==1)
                 {
                     page.setColor(Color.yellow);
                     page.fillRect(pos+hSpace, base+vSpace, 15, 15);
                     page.setColor(Color.black);
                 
                 }
-                else if (gen.nextInt(10) == 1)
+                else
                 {
                     page.setColor(Color.black);
                     page.fillRect(pos+hSpace, base+vSpace, 15, 15);
@@ -53,7 +54,15 @@ public class Window
                     check=false;
                 }
 
+         }
     }
+    
+    public void run()
+    {
+        while(true)
+        {
+            check = gen.nextInt(1);
+        }
     }
     }
 

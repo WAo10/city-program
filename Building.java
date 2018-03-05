@@ -6,7 +6,6 @@ public class Building implements Runnable
    private int height, width, x;
    private int base;
    private Window windows;
-   private Background back;
 
    private Random gen = new Random();
     public Building(int tall, int wide, int pos)
@@ -44,6 +43,9 @@ public class Building implements Runnable
         page.drawLine(x+50, base-50, x+width+50, base-50);
         
         windows.paint(page);
+  
+        
+     
        }
 
     public int getPos()

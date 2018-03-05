@@ -1,7 +1,9 @@
 #BlueJ class context
 comment0.params=width\ height\ x\ top
 comment0.target=Window(int,\ int,\ int,\ int)
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Window\r\n
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Window\n
 comment1.params=page
 comment1.target=void\ paint(java.awt.Graphics)
-numComments=2
+comment2.params=
+comment2.target=void\ run()
+numComments=3
