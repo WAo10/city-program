@@ -3,11 +3,11 @@ import java.awt.*;
 public class Sky implements Runnable
 {
 
-    private int blue = 255;
-    private boolean rise = true;
+    private int blue = 0;
     private int x, y;
-    private int count = 1400%255;
-    private int check = 0;
+    private boolean day = true;
+    private Color color = Color.yellow;
+    
     /**
      * Constructor for objects of class Sky
      */
@@ -18,43 +18,52 @@ public class Sky implements Runnable
     {
         g.setColor(new Color(0, 0, blue));
         g.fillRect(0, 0, 1360, 475);
-        g.setColor(Color.yellow);
-        g.fillOval(x, 50, 15, 15);
+        g.setColor(color);
+        g.fillOval(x, y, 15, 15);
     }
     
     public void run()
     {
         while(true)
         {
-            check+=1;
-            if(check==count)
-            {
+            y = (500-(int)(0.001*Math.pow((x-390), 2)+500));
             x+=1;
-        }
-            if(x==1400)
+            if(x>1400)
             {
                 x=0;
+                if (day==true)
+                {
+                    day=false;
+                }
+                else
+                {
+                    day=true;
+                }
             }
-            if (rise==true)
+            if(day==true)
             {
-                blue-=1;
+                color = Color.yellow;
+                if (x>1050 && blue>0)
+                {
+                        blue-=1;
+                }
+                else if (x>0 && blue<255)
+                {
+                        blue+=1;
+                }
             }
-            else if (rise==false)
+            else
             {
-                blue+=1;
-            }
-            if (blue==0)
-            {
-                rise=false;
-            }
-            else if (blue==255)
-            {
-                rise=true;
+                color = Color.white;
+                if (x>1100 && blue<255)
+                {
+                        blue+=1;
+                }
             }
             try
-        {
+            {
             Thread.sleep(17);
-        } catch(InterruptedException e){}
+            } catch(InterruptedException e){}
         }
         
     }

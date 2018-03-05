@@ -25,6 +25,8 @@ public class Window
         int hSpace = 5;
         int vSpace = 5;
         boolean check = true;
+        
+
         while (check)
         {
                 page.fillRect(pos+hSpace, base+vSpace, 15, 15);
@@ -50,8 +52,8 @@ public class Window
                 {
                     check=false;
                 }
-        }
-    }
-   
 
-}
+    }
+    }
+    }
+
