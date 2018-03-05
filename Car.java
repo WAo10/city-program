@@ -23,14 +23,12 @@ public class Car implements Runnable
     {
         while(true)
         {
-            xPos+=5;
+            xPos+=1;
             if(xPos>1500)
             {
                 xPos=0;
             }
-            try{
-                Thread.sleep(6);
-            } catch (InterruptedException e){}
+           
         }
     }
 }

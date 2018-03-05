@@ -37,9 +37,7 @@ public class Sky implements Runnable
             {
                 rise=true;
             }
-            
-            try{
-            } catch(Exception e){}
+
         }
     }
 }

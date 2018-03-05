@@ -30,7 +30,7 @@ public class City extends Applet{ //implements MouseListener {
       
       Thread t1 = new Thread(sky);
       t1.start();
-      
+      /*
       Thread t2 = new Thread(build1);
       t2.start();
       
@@ -45,7 +45,7 @@ public class City extends Applet{ //implements MouseListener {
     
      Thread t6 = new Thread(build5);
       t6.start();
-     
+     */
       Thread t7 = new Thread(back);
       t7.start();
       
@@ -98,12 +98,12 @@ public class City extends Applet{ //implements MouseListener {
       
       page.drawImage(offscreen, 0, 0, this);
       
-      
+      /*
       try
       {
           Thread.sleep(1);
         } catch(InterruptedException e){}
-      
+      */
       
         repaint();
    }
