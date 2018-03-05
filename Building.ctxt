@@ -5,4 +5,6 @@ comment1.params=page
 comment1.target=void\ draw(java.awt.Graphics)
 comment2.params=
 comment2.target=int\ getPos()
-numComments=3
+comment3.params=
+comment3.target=void\ run()
+numComments=4

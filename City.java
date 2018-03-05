@@ -4,11 +4,13 @@ import java.applet.Applet;
 import java.awt.*;
  
 public class City extends Applet{ //implements MouseListener {
-   Graphics bufferGraphics;
-   Image offscreen;
+   Graphics bufferGraphics, bufferGraphics2;
+   Image offscreen, offscreen2;
    StringBuffer strBuffer;
    private Building build1, build2, build3, build4, build5;
    private Background back;
+   private Sky sky;
+   private Car car;
    
    public void init() {
       //addMouseListener(this);
@@ -19,27 +21,42 @@ public class City extends Applet{ //implements MouseListener {
       build3 = new Building(500, 175, 500);
       build4 = new Building(100, 200, 750);
       build5 = new Building(300, 150, 1050);
+      
+      sky = new Sky();
+      
       back = new Background();
+      
+      car = new Car();
+      
+      Thread t1 = new Thread(sky);
+      t1.start();
       /*
-      Thread t1 = new Thread(build1);
-      t1.start();
+      Thread t2 = new Thread(build1);
+      t2.start();
       
-      Thread t2 = new Thread(build2);
-      t1.start();
+     Thread t3 = new Thread(build2);
+      t3.start();
       
-      Thread t3 = new Thread(build3);
-      t1.start();
+     Thread t4 = new Thread(build3);
+      t4.start();
       
-      Thread t4 = new Thread(build4);
-      t1.start();
+      Thread t5 = new Thread(build4);
+      t5.start();
+    
+     Thread t6 = new Thread(build5);
+      t6.start();
+     */
+      Thread t7 = new Thread(back);
+      t7.start();
       
-      Thread t5 = new Thread(build5);
-      t1.start();
-      */
-     
+      Thread t8 = new Thread(car);
+      t8.start();
+      
       setSize(1340, 650);
       offscreen = createImage(1350, 730);
+      
       bufferGraphics = offscreen.getGraphics();
+     
    }
 
    
@@ -66,21 +83,37 @@ public class City extends Applet{ //implements MouseListener {
   
    public void paint(Graphics page) {
       start();
+      
+      back.draw(bufferGraphics);
+      
+      sky.draw(bufferGraphics);
+      
       build1.draw(bufferGraphics);
       build2.draw(bufferGraphics);
       build3.draw(bufferGraphics);
       build4.draw(bufferGraphics);
       build5.draw(bufferGraphics);
-      back.draw(bufferGraphics);
+      
+      car.draw(bufferGraphics);
+      
       page.drawImage(offscreen, 0, 0, this);
-      repaint();
+      
+      /*
+      try
+      {
+          Thread.sleep(1);
+        } catch(InterruptedException e){}
+      */
+      
+        update(page);
    }
-
+   
    public void update(Graphics page)
    {
-       paint(page);
-    }
-
+       try{
+           Thread.sleep(17);
+    } catch (InterruptedException e){}
+    paint(page);
    /*
    public void mouseEntered(MouseEvent event) {
    }
@@ -94,4 +127,5 @@ public class City extends Applet{ //implements MouseListener {
       addItem("mouse clicked! ");
    }
    */
+}
 }

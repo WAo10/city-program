@@ -33,10 +33,6 @@ public class Window
                     page.setColor(Color.yellow);
                     page.fillRect(pos+hSpace, base+vSpace, 15, 15);
                     page.setColor(Color.black);
-                    try
-                    {
-                         Thread.sleep(17);
-                    } catch(InterruptedException e){}
                 
                 }
                 else if (gen.nextInt(10) == 1)
