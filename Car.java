@@ -14,22 +14,23 @@ public class Car implements Runnable
     public void draw(Graphics g)
     {
         g.setColor(Color.red);
-        g.fillRect(xPos, 650, 45, 10);
-        g.fillOval(xPos+15, 650, 5, 5);
-        g.fillOval(xPos+30, 650, 5, 5);
+        g.fillRect(xPos, 625, 45, 10);
+        g.fillOval(xPos+5, 632, 8, 8);
+        g.fillOval(xPos+30, 632, 8, 8);
     }
     
     public void run()
     {
         while(true)
         {
-            xPos+=1;
+            xPos+=5;
             if(xPos>1500)
             {
                 xPos=0;
             }
             try{
-            } catch (Exception e){}
+                Thread.sleep(6);
+            } catch (InterruptedException e){}
         }
     }
 }
