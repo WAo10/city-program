@@ -1,7 +1,7 @@
 import java.awt.*;  
    
   
-public class Background{ 
+public class Background implements Runnable {
   public void Background() {}  
     
   public void draw(Graphics g) {  
@@ -38,4 +38,8 @@ public class Background{
 
      
   }  
+  
+  public void run()
+  {
+    }
 }

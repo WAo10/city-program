@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.applet.Applet;
 import java.util.Random;
-public class Building //implements Runnable
+public class Building implements Runnable
 {
    private int height, width, x;
    private int base;
@@ -51,25 +51,14 @@ public class Building //implements Runnable
         return 0;
     }
     
-    /*
+    
     public void run()
     {
         while(true)
         {
-            for (Window window: windows)
-            {
-                if ((gen.nextInt(1)==1) && (window.getState()==1))
-                {
-                    window.changeState();
-                }
-                    else if (gen.nextInt(1)==1)
-                {
-                    window.changeState();
-                }
-            }
         }
     }
-    */
+    
     
 }
 

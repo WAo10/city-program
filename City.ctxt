@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.params=
-comment0.target=void\ init()
+comment0.target=void\ start()
 comment1.params=page
 comment1.target=void\ paint(java.awt.Graphics)
 comment1.text=\n\ \ \ public\ void\ stop()\ {\n\ \ \ \ \ \ addItem("\\nstopping\ the\ applet\ ");\n\ \ \ }\n\n\ \ \ public\ void\ destroy()\ {\n\ \ \ \ \ \ addItem("\\nunloading\ the\ applet");\n\ \ \ }\n\ \ \n\ \ \ \n\ \ \ void\ addItem(String\ word)\ {\n\ \ \ \ \ \ System.out.println(word);\n\ \ \ \ \ \ strBuffer.append(word);\n\ \ \ \ \ \ repaint();\n\ \ \ }\n
