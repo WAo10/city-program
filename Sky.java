@@ -26,7 +26,7 @@ public class Sky implements Runnable
     {
         while(true)
         {
-            y = (500-(int)(0.001*Math.pow((x-390), 2)+500));
+            y = ((int)(0.0001*Math.pow((x-700), 2)+150));
             x+=1;
             if(x>1400)
             {
