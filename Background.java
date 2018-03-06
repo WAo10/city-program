@@ -18,7 +18,7 @@ public class Background implements Runnable {
     int xShift = 20;
     int[] x = {xShift, xShift+50, xShift+50-2, xShift-2};
     int[] y = {620, 620, 625, 625};
-    
+   
     
     while(check==true)
     {

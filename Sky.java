@@ -19,14 +19,14 @@ public class Sky implements Runnable
         g.setColor(new Color(0, 0, blue));
         g.fillRect(0, 0, 1360, 475);
         g.setColor(color);
-        g.fillOval(x, y, 15, 15);
+        g.fillOval(x, y, 50, 50);
     }
     
     public void run()
     {
         while(true)
         {
-            y = (500-(int)(0.001*Math.pow((x-390), 2)+500));
+            y = ((int)(0.0001*Math.pow((x-700), 2)+50));
             x+=1;
             if(x>1400)
             {

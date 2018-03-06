@@ -102,5 +102,5 @@ target6.showInterface=false
 target6.type=AppletTarget
 target6.typeParameters=
 target6.width=80
-target6.x=110
-target6.y=80
+target6.x=140
+target6.y=200
