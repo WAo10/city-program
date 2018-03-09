@@ -18,9 +18,10 @@ public class FieryDeath implements Runnable
             if (death == false)
             {
                  g.setColor(Color.orange);
-                 g.fillOval(500, y, 100, 100);
+                 g.fillOval(500, y, 500, 500);
            }
-           else{
+           else if (death == true)
+           {
                g.setColor(new Color(gen.nextInt(255), 0, 0));
                g.drawRect(0, 0, 1400, 800);
         }
@@ -44,8 +45,8 @@ public class FieryDeath implements Runnable
                 death = true;
             }
             try{
-            Thread.sleep(17);
-        } catch(InterruptedException e){}
+                Thread.sleep(17);
+            } catch(InterruptedException e){}
         }
     }
 }

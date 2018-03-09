@@ -8,11 +8,10 @@ public class City extends Applet{ //implements MouseListener{
    Image offscreen;
    //StringBuffer strBuffer;
    private Building build1, build2, build3, build4, build5;
-   private Background back;
-   private Sky sky;
-   private Car car, car2;
-   private boolean check = false;
-   private FieryDeath death;
+//    private Background back;
+//    private Sky sky;
+//    private Car car, car2;
+   //private FieryDeath death;
    
    public void init() {
       //addMouseListener(this);
@@ -24,17 +23,17 @@ public class City extends Applet{ //implements MouseListener{
       build4 = new Building(100, 200, 750);
       build5 = new Building(300, 150, 1050);
       
-      death = new FieryDeath();
+      //death = new FieryDeath();
       
-      sky = new Sky();
+//       sky = new Sky();
+//       
+//       back = new Background();
       
-      back = new Background();
-      
-      car = new Car(625, 5, Color.blue);
-      car2 = new Car(610, 1, Color.green);
-      
-      Thread t1 = new Thread(sky);
-      t1.start();
+//       car = new Car(625, 5, Color.blue);
+//       car2 = new Car(610, 1, Color.green);
+//       
+//       Thread t1 = new Thread(sky);
+//       t1.start();
       
       Thread t2 = new Thread(build1);
       t2.start();
@@ -51,17 +50,17 @@ public class City extends Applet{ //implements MouseListener{
      Thread t6 = new Thread(build5);
       t6.start();
     
-      Thread t7 = new Thread(back);
-      t7.start();
+//       Thread t7 = new Thread(back);
+//       t7.start();
       
-      Thread t8 = new Thread(car);
-      t8.start();
+//       Thread t8 = new Thread(car);
+//       t8.start();
+//       
+//       Thread t9 = new Thread(car2);
+//       t9.start();
       
-      Thread t9 = new Thread(car2);
-      t9.start();
-      
-      Thread t10 = new Thread(death);
-      t10.start();
+      //Thread t10 = new Thread(death);
+      //t10.start();
       
       setSize(1340, 650);
       offscreen = createImage(1350, 730);
@@ -86,9 +85,9 @@ public class City extends Applet{ //implements MouseListener{
    public void paint(Graphics page) {
       start();
       
-      back.draw(bufferGraphics);
-      
-      sky.draw(bufferGraphics);
+//       back.draw(bufferGraphics);
+//       
+//       sky.draw(bufferGraphics);
       
       build1.draw(bufferGraphics);
       build2.draw(bufferGraphics);
@@ -96,17 +95,12 @@ public class City extends Applet{ //implements MouseListener{
       build4.draw(bufferGraphics);
       build5.draw(bufferGraphics);
       
-      car.draw(bufferGraphics);
-      car2.draw(bufferGraphics);
+//       car.draw(bufferGraphics);
+//       car2.draw(bufferGraphics);
       
-      death.draw(bufferGraphics);
+      //death.draw(bufferGraphics);
       
       page.drawImage(offscreen, 0, 0, this);
-      
-      //if (check==true)
-      //{
-          
-        //}
       
       
         update(page);

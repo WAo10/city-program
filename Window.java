@@ -29,20 +29,10 @@ public class Window implements Runnable
         while (check)
         {
                 page.fillRect(pos+hSpace, base+vSpace, 15, 15);
-                
-                
-                if (gen.nextInt(5)==1)
-                {
-                    page.setColor(Color.yellow);
-                    page.fillRect(pos+hSpace, base+vSpace, 15, 15);
-                    page.setColor(Color.black);
-                
-                }
-                else
-                {
+     
                     page.setColor(Color.black);
                     page.fillRect(pos+hSpace, base+vSpace, 15, 15);
-                }
+
                 hSpace+=25;
                 if (hSpace+15>=wide)
                 {

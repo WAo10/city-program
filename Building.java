@@ -24,15 +24,15 @@ public class Building implements Runnable
         page.drawRect(x, base, width, height);
         
         page.setColor(new Color(100, 100, 100));
-        page.fillRect(x+1 ,base+1, width-1, height-1);
+        //page.fillRect(x+1 ,base+1, width-1, height-1);
  
-        int[] pointx1 = {x, x+width, x+width+50, x+50};
-        int[] pointy1 = {base, base, base-50, base-50};
-        page.fillPolygon(pointx1, pointy1, 4);
-        
-        int[] pointx2 = {x+width+1, x+width+50+1, x+width+50+1, x+width+1};
-        int[] pointy2 = {base, base-50, height+base-50, height+base};
-        page.fillPolygon(pointx2, pointy2, 4);
+//         int[] pointx1 = {x, x+width, x+width+50, x+50};
+//         int[] pointy1 = {base, base, base-50, base-50};
+//         page.fillPolygon(pointx1, pointy1, 4);
+//         
+//         int[] pointx2 = {x+width+1, x+width+50+1, x+width+50+1, x+width+1};
+//         int[] pointy2 = {base, base-50, height+base-50, height+base};
+//         page.fillPolygon(pointx2, pointy2, 4);
         
         page.setColor(Color.black);
         page.drawLine(x, base, x+50, base-50);
@@ -42,7 +42,7 @@ public class Building implements Runnable
         page.drawLine(x+width+50, base-50, x+width+50, height+base-50);
         page.drawLine(x+50, base-50, x+width+50, base-50);
         
-        windows.paint(page);
+        //windows.paint(page);
   
         
      
